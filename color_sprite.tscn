@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfd3tme0rcy56"]
+
+[ext_resource type="Texture2D" uid="uid://buyin44gebqrq" path="res://square-white.png" id="1_8n5nh"]
+[ext_resource type="Script" path="res://color_sprite.gd" id="1_iu3u5"]
+[ext_resource type="Texture2D" uid="uid://bex2ov7cpwgnw" path="res://square-gray.png" id="3_q7hyi"]
+
+[node name="ColorSprite" type="Sprite2D"]
+position = Vector2(310, 180)
+texture = ExtResource("1_8n5nh")
+script = ExtResource("1_iu3u5")
+
+[node name="ColorTexture" type="TextureRect" parent="."]
+offset_left = 185.0
+offset_top = 176.0
+offset_right = 313.0
+offset_bottom = 304.0
+texture = ExtResource("1_8n5nh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -82.0
+offset_top = 181.0
+offset_right = 46.0
+offset_bottom = 309.0
+texture = ExtResource("3_q7hyi")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
